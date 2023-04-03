@@ -42,7 +42,7 @@ fun ProfileScreen() {
     }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        TopBar(name = "philipplackner_official", modifier = Modifier.padding(10.dp))
+        TopBar(name = "signor_da_vinci", modifier = Modifier.padding(10.dp))
         Spacer(modifier = Modifier.height(4.dp))
         ProfileSection()
         Spacer(modifier = Modifier.height(25.dp))
@@ -159,7 +159,7 @@ fun ProfileSection(
                 .padding(horizontal = 20.dp)
         ) {
             RoundImage(
-                image = painterResource(id = R.drawable.philipp),
+                image = painterResource(id = R.drawable.ic_profile_pic),
                 modifier = Modifier
                     .size(100.dp)
                     .weight(3f)
@@ -168,12 +168,10 @@ fun ProfileSection(
             StatsSection(modifier = modifier.weight(7f))
         }
         ProfileDescription(
-            displayName = "Programming Mentor",
-            description = "10 years of coding experience\n" +
-                    "Want me to make your app? Send me an email!\n" +
-                    "Subscribe to my YouTube channel!",
-            url = "https://youtube.com/c/PhilippLackner",
-            followedBy = listOf("codinginflow", "miakhalifa"),
+            displayName = "Vivek Sharma",
+            description = "Hello, I am Vivek Sharms\n" +
+                    "Want me to make your app? Send me an email!\n",
+            followedBy = listOf("sachinTendulkar", "viratKohli"),
             otherCount = 17
         )
     }
@@ -206,8 +204,8 @@ fun StatsSection(
         horizontalArrangement = Arrangement.SpaceAround,
         modifier = modifier
     ) {
-        ProfileStat(numberText = "601", text = "Posts")
-        ProfileStat(numberText = "100k", text = "Followers")
+        ProfileStat(numberText = "300", text = "Posts")
+        ProfileStat(numberText = "500", text = "Followers")
         ProfileStat(numberText = "72", text = "Following")
     }
 }
@@ -233,7 +231,6 @@ fun ProfileStat(
 fun ProfileDescription(
     displayName: String,
     description: String,
-    url: String,
     followedBy: List<String>,
     otherCount: Int
 ) {
@@ -255,12 +252,6 @@ fun ProfileDescription(
             text = description,
             letterSpacing = letterSpacing,
             lineHeight = lineHeight
-        )
-        Text(
-            text = url,
-            letterSpacing = letterSpacing,
-            lineHeight = lineHeight,
-            color = Color(0xff3D3D91)
         )
         if (followedBy.isNotEmpty()) {
             Text(
